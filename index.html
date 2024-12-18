@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Web Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <label>
+            <input id="menu-toggle" type="checkbox">
+            <div class="toggle">
+                <span class="top_line common"></span>
+                <span class="middle_line common"></span>
+                <span class="bottom_line common"></span>
+            </div>
+            <div id="slide-menu" class="slide">
+                <h1>MENU</h1>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tv"></i>Dashboard</a></li>
+                </ul>
+            </div>
+        </label>
+
+        
+        <div class="search-bar">
+            <input placeholder="Search" type="text" />
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="title">
+            <img alt="NAMA" src="image/logo_school_refusal.png">
+        </div>
+        <div class="divider"></div>
+        <div>
+            <div class="content-wrapper">
+                <div class="main-column">
+                    <img alt="Review Samsung Galaxy Tab S10 Plus: Tablet AI Kinerja Tangguh" class="main-image"
+                        src="image/66f3e2834f7fe.jpg" />
+                </div>
+                <div class="news-section">
+                    <div class="news-item">
+                        <img alt="HP Gaming Asus ROG Phone 9" src="https://placehold.co/80x80" />
+                        <p>HP Gaming Asus ROG Phone 9 dan ROG Phone 9 Pro Dirilis, Ini Harganya</p>
+                    </div>
+                    <div class="news-item">
+                        <img alt="HP 'Underwater' Realme GT 7 Pro" src="https://placehold.co/80x80" />
+                        <p>HP "Underwater" Realme GT 7 Pro Rilis Global, Ini Spesifikasinya</p>
+                    </div>
+                    <div class="news-item">
+                        <img alt="Laptop Tecno Megabook K16S" src="https://placehold.co/80x80" />
+                        <p>Laptop Tecno Megabook K16S Rilis di Indonesia, Harga Rp 6 Juta</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="divider"></div>
+        <div class="large-news-item">
+            <img alt="Laptop and notebook on a table" src="https://placehold.co/100x100" />
+            <p>7 Tips Pilih Laptop buat Pelajar untuk Kebutuhan Nugas</p>
+        </div>
+        <div class="large-news-item">
+            <img alt="Laptop and notebook on a table" src="https://placehold.co/100x100" />
+            <p>7 Tips Pilih Laptop buat Pelajar untuk Kebutuhan Nugas</p>
+        </div>
+        <div class="large-news-item">
+            <img alt="Laptop and notebook on a table" src="https://placehold.co/100x100" />
+            <p>7 Tips Pilih Laptop buat Pelajar untuk Kebutuhan Nugas</p>
+        </div>
+        <div class="large-news-item">
+            <img alt="Laptop and notebook on a table" src="https://placehold.co/100x100" />
+            <p>7 Tips Pilih Laptop buat Pelajar untuk Kebutuhan Nugas</p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener('click', function (event) {
+        const toggleCheckbox = document.getElementById('menu-toggle');
+        const slideMenu = document.getElementById('slide-menu');
+        const toggleButton = document.querySelector('.toggle');
+
+        if (
+            toggleCheckbox.checked &&
+            !slideMenu.contains(event.target) &&
+            !toggleCheckbox.contains(event.target) &&
+            !toggleButton.contains(event.target)
+        ) {
+            toggleCheckbox.checked = false;
+        }
+    });
+</script>
+
+</html>
