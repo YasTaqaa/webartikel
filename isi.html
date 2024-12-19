@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Web Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <label>
+            <input id="menu-toggle" type="checkbox">
+            <div class="toggle" title="Menu">
+                <span class="top_line common"></span>
+                <span class="middle_line common"></span>
+                <span class="bottom_line common"></span>
+            </div>
+
+            <div id="slide-menu" class="slide">
+                <h1>MENU</h1>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tv"></i> Dashboard</a></li>
+                </ul>
+            </div>
+        </label>
+
+        <div class="search-bar">
+            <input placeholder="Search" type="text" />
+            <button id="search-button" title="Click to search" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="title">
+            <img alt="NAMA" src="image/logo_school_refusal.png">
+        </div>
+        <div class="divider"></div>
+
+        <div class="judul">
+            <p>Review Samsung Galaxy Tab S10 Plus: Tablet AI Kinerja Tangguh</p>
+        </div>
+
+        <div class="image">
+            <img alt="Review Samsung Galaxy Tab S10 Plus" src="image/66f3e2834f7fe.jpg" />
+        </div>
+
+        <div class="content">
+            <section id="desain-dan-layar">
+                <h2>Desain dan Layar</h2>
+                <p>Samsung Galaxy Tab S10 Plus memiliki desain yang ramping dan elegan dengan bahan premium yang memberikan kesan
+                    mewah. Tablet ini dilengkapi dengan layar 12.4 inci Super AMOLED yang menampilkan warna tajam dan kontras luar
+                    biasa, membuatnya ideal untuk menonton video, bermain game, atau membaca.</p>
+                <h3>Kelebihan layar:</h3>
+                <ul>
+                    <li>Resolusi tinggi untuk detail tajam.</li>
+                    <li>Teknologi AMOLED memastikan warna cerah dan hitam pekat.</li>
+                    <li>Tingkat kecerahan yang cukup tinggi untuk penggunaan di luar ruangan.</li>
+                </ul>
+            </section>
+            
+            <section id="performa">
+                <h2>Performa</h2>
+                <p>Ditenagai oleh Snapdragon 8 Gen 2 dengan dukungan AI, Galaxy Tab S10 Plus menawarkan kinerja cepat untuk
+                    multitasking, gaming, dan aplikasi berat. RAM hingga 12GB memastikan pengalaman yang mulus tanpa lag.</p>
+                <h3>Fitur utama:</h3>
+                <ul>
+                    <li>Kinerja responsif bahkan untuk aplikasi berat.</li>
+                    <li>AI-enhanced processing untuk efisiensi daya.</li>
+                    <li>Penyimpanan internal hingga 512GB (dapat diperluas dengan kartu microSD).</li>
+                </ul>
+            </section>
+            
+            <section id="s-pen">
+                <h2>Pena S Pen</h2>
+                <p>Galaxy Tab S10 Plus hadir dengan S Pen yang ditingkatkan, membuat tablet ini ideal untuk kreator, profesional,
+                    dan pelajar. Stylus ini memiliki sensitivitas tekanan yang tinggi, cocok untuk mencatat, menggambar, dan
+                    mengedit dokumen.</p>
+            </section>
+            
+            <section id="baterai">
+                <h2>Baterai</h2>
+                <p>Tablet ini dilengkapi dengan baterai besar yang mendukung pengisian cepat. Dengan kapasitas 10,090 mAh, tablet
+                    ini mampu bertahan hingga 12 jam untuk streaming video.</p>
+            </section>
+            
+            <section id="kamera">
+                <h2>Kamera</h2>
+                <p>Meskipun kamera bukan fitur utama pada tablet, Galaxy Tab S10 Plus memiliki kamera belakang 13MP dan kamera depan
+                    8MP yang cukup mumpuni untuk panggilan video dan pemotretan dasar.</p>
+            </section>
+            
+            <section id="kelebihan-dan-kekurangan">
+                <h2>Kelebihan dan Kekurangan</h2>
+                <h3>Kelebihan:</h3>
+                <ul>
+                    <li>Layar besar dengan kualitas premium.</li>
+                    <li>Performa unggulan untuk tugas berat.</li>
+                    <li>S Pen untuk produktivitas dan kreativitas.</li>
+                    <li>Dukungan multitasking dengan split-screen mode.</li>
+                    <li>Baterai tahan lama.</li>
+                </ul>
+                <h3>Kekurangan:</h3>
+                <ul>
+                    <li>Harga premium yang cukup tinggi.</li>
+                    <li>Kamera tidak sebaik smartphone flagship.</li>
+                    <li>Tidak terlalu nyaman untuk digunakan dengan satu tangan karena ukurannya.</li>
+                </ul>
+            </section>
+            
+            <section id="kesimpulan">
+                <h2>Kesimpulan</h2>
+                <p>Samsung Galaxy Tab S10 Plus adalah pilihan yang tepat bagi mereka yang mencari tablet premium dengan kinerja
+                    tangguh, layar berkualitas, dan fitur produktivitas seperti S Pen. Tablet ini cocok untuk profesional, pelajar,
+                    atau siapa pun yang membutuhkan perangkat serbaguna untuk bekerja dan hiburan.</p>
+                <p class="price">Harga: Mulai dari Rp 12.000.000,- (tergantung varian).</p>
+            </section>
+    </div>
+
+    <script>
+        document.addEventListener('click', function (event) {
+            const toggleCheckbox = document.getElementById('menu-toggle');
+            const slideMenu = document.getElementById('slide-menu');
+            const toggleButton = document.querySelector('.toggle');
+
+            if (
+                toggleCheckbox.checked &&
+                !slideMenu.contains(event.target) &&
+                !toggleCheckbox.contains(event.target) &&
+                !toggleButton.contains(event.target)
+            ) {
+                toggleCheckbox.checked = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
