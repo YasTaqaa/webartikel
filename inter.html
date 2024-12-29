@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Web Artikel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <label>
+            <input id="menu-toggle" type="checkbox">
+            <div class="toggle" title="Menu">
+                <span class="top_line common"></span>
+                <span class="middle_line common"></span>
+                <span class="bottom_line common"></span>
+            </div>
+            <div id="slide-menu" class="slide">
+                <h1>MENU</h1>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-tv"></i>Dashboard</a></li>
+                    <li><a href="general.html"><i class="fas fa-flag"></i>General News</a></li>
+                    <li><a href="inter.html"><i class="fas fa-globe"></i>International News</a></li>
+                </ul>
+            </div>
+        </label>
+
+
+        <div class="search-bar">
+            <input placeholder="Search" type="text" />
+            <button id="search-button" title="Click to search" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="title">
+            <img alt="NAMA" src="image/logo_school_refusal.png">
+        </div>
+        <div class="divider"></div>
+        <!-- Konten International -->
+        <div id="international-content">
+            <div class="title">
+                <p>International News</p>
+            </div>
+            <div id="api-data" class="large-item"></div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData() {
+            const apiKey = 'a8c364cbbdba42b3b132a23d08815092';
+            const apiUrl = 'https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=' + apiKey;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                console.log(data);
+                displayData(data.articles);
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        }
+
+        function displayData(articles) {
+            const dataContainer = document.getElementById('api-data');
+            dataContainer.innerHTML = '';
+
+            articles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('api-news-item');
+                articleElement.innerHTML = `
+                    <img src="${article.urlToImage}" alt="${article.title}" />
+                    <p>${article.title}</p>
+                    <a href="${article.url}" target="_blank">Baca selengkapnya</a>
+                `;
+                dataContainer.appendChild(articleElement);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+
+</body>
+
+<script>
+    document.addEventListener('click', function (event) {
+        const toggleCheckbox = document.getElementById('menu-toggle');
+        const slideMenu = document.getElementById('slide-menu');
+        const toggleButton = document.querySelector('.toggle');
+
+        if (
+            toggleCheckbox.checked &&
+            !slideMenu.contains(event.target) &&
+            !toggleCheckbox.contains(event.target) &&
+            !toggleButton.contains(event.target)
+        ) {
+            toggleCheckbox.checked = false;
+        }
+    });
+
+</script>
+
+<script>
+    function switchContent(category) {
+        const generalContent = document.getElementById('general-content');
+        const internationalContent = document.getElementById('international-content');
+
+        if (category === 'general') {
+            generalContent.style.display = 'block';
+            internationalContent.style.display = 'none';
+        } else if (category === 'international') {
+            generalContent.style.display = 'none';
+            internationalContent.style.display = 'block';
+            fetchData();
+        }
+    }
+    document.getElementById('general-news').addEventListener('click', function (event) {
+        event.preventDefault();
+        switchContent('general');
+    });
+
+    document.getElementById('international-news').addEventListener('click', function (event) {
+        event.preventDefault();
+        switchContent('international');
+    });
+
+</script>
+
+</html>
