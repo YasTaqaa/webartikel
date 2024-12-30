@@ -14,11 +14,28 @@ body {
 .header {
     background-color: #007bff;
     padding: 10px;
+    height: 60px;
     display: flex;
-    align-items: center;
+    align-items: center; 
+    justify-content: center; 
     position: fixed;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box;
+}
+
+.header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header .title img {
+    margin: 0;
+    max-width: 150px;
+    object-fit: contain;
+    
 }
 
 
@@ -149,38 +166,6 @@ input:checked~.slide {
 }
 
 
-/*SEARCHBAR*/
-.header .search-bar {
-    left: 30px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px;
-    width: 50%;
-    max-width: 400px;
-    min-width: 100px;
-    padding: 5px 10px;
-    transition: width 0.3s ease;
-    margin: 0 auto;
-}
-.header .search-bar input {
-    border: none;
-    outline: none;
-    padding: 5px;
-    font-size: 16px;
-    width: 100%;
-}
-.header .search-bar i {
-    color: #007bff;
-    font-size: 20px;
-    margin-left: auto;
-}
-.search-bar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
 
 .main-content {
     padding: 20px;
@@ -192,6 +177,14 @@ input:checked~.slide {
     font-size: 40px;
     margin-bottom: 10px;
     font-weight: bold;
+}
+.main-content .title {
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+.main-content .judul {
+    margin-bottom: 20px;
+    margin-top: 80px
 }
 .main-content .title img {
     margin-top: 60px;
